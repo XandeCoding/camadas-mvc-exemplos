@@ -1,15 +1,14 @@
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:calculadora/calculatorController.dart';
 import 'package:flutter/material.dart';
 
-import 'memory.dart';
-
-class Calculator extends StatefulWidget {
+class CalculatorView extends StatefulWidget {
   @override
-  _CalculatorState createState() => _CalculatorState();
+  _CalculatorViewState createState() => _CalculatorViewState();
 }
 
-class _CalculatorState extends State<Calculator> {
-  final _memory = Memory();
+class _CalculatorViewState extends State<CalculatorView> {
+  final calculatorController = CalculatorController();
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +39,7 @@ class _CalculatorState extends State<Calculator> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: AutoSizeText(
-                _memory.result,
+                calculatorController.getResult(),
                 minFontSize: 20.0,
                 maxFontSize: 80.0,
                 maxLines: 1,
@@ -65,17 +64,15 @@ class _CalculatorState extends State<Calculator> {
       Color backgroundColor = Colors.black}) {
     return Expanded(
       flex: flex,
-      // TODO: change this to elevated button
-      child: RaisedButton(
-          color: backgroundColor,
-          textColor: textColor,
+      child: ElevatedButton(
+          style: ElevatedButton.styleFrom(primary: backgroundColor),
           child: Text(
             label,
-            style: TextStyle(fontSize: 24),
+            style: TextStyle(fontSize: 24, color: textColor),
           ),
           onPressed: () {
             setState(() {
-              _memory.applyCommand(label);
+              calculatorController.applyCommand(label);
             });
           }),
     );
@@ -92,10 +89,10 @@ class _CalculatorState extends State<Calculator> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                _buildKeyboardButton('AC', textColor: Colors.deepOrange),
-                _buildKeyboardButton('DEL', textColor: Colors.deepOrange),
-                _buildKeyboardButton('%', textColor: Colors.deepOrange),
-                _buildKeyboardButton('÷', textColor: Colors.deepOrange),
+                _buildKeyboardButton('AC', textColor: Colors.lightGreenAccent),
+                _buildKeyboardButton('DEL', textColor: Colors.lightGreenAccent),
+                _buildKeyboardButton('%', textColor: Colors.lightGreenAccent),
+                _buildKeyboardButton('÷', textColor: Colors.lightGreenAccent),
               ],
             ),
           ),
@@ -107,7 +104,7 @@ class _CalculatorState extends State<Calculator> {
                 _buildKeyboardButton('7'),
                 _buildKeyboardButton('8'),
                 _buildKeyboardButton('9'),
-                _buildKeyboardButton('x', textColor: Colors.deepOrange),
+                _buildKeyboardButton('x', textColor: Colors.lightGreenAccent),
               ],
             ),
           ),
@@ -119,7 +116,7 @@ class _CalculatorState extends State<Calculator> {
                 _buildKeyboardButton('4'),
                 _buildKeyboardButton('5'),
                 _buildKeyboardButton('6'),
-                _buildKeyboardButton('+', textColor: Colors.deepOrange)
+                _buildKeyboardButton('+', textColor: Colors.lightGreenAccent)
               ],
             ),
           ),
@@ -131,7 +128,7 @@ class _CalculatorState extends State<Calculator> {
                 _buildKeyboardButton('1'),
                 _buildKeyboardButton('2'),
                 _buildKeyboardButton('3'),
-                _buildKeyboardButton('-', textColor: Colors.deepOrange)
+                _buildKeyboardButton('-', textColor: Colors.lightGreenAccent)
               ],
             ),
           ),
@@ -142,7 +139,8 @@ class _CalculatorState extends State<Calculator> {
                   children: <Widget>[
                     _buildKeyboardButton('0', flex: 2),
                     _buildKeyboardButton('.'),
-                    _buildKeyboardButton('=', textColor: Colors.deepOrange),
+                    _buildKeyboardButton('=',
+                        textColor: Colors.lightGreenAccent),
                   ]))
         ],
       ),

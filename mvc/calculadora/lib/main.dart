@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'calculator.dart';
+import 'calculatorView.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Calculator(),
+      home: CalculatorView(),
     );
   }
 }

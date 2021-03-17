@@ -1,4 +1,4 @@
-class Memory {
+class CalculatorModel {
   static const operations = const ['%', '÷', '+', '-', 'x', '='];
   String _operation;
   bool _usedOperation = false;
@@ -7,7 +7,7 @@ class Memory {
 
   String result = '0';
 
-  Memory() {
+  CalculatorModel() {
     _clear();
   }
 
