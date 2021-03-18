@@ -72,7 +72,7 @@ class _CalculatorViewState extends State<CalculatorView> {
           ),
           onPressed: () {
             setState(() {
-              calculatorController.applyCommand(label);
+              calculatorController.addToCalc(label);
             });
           }),
     );

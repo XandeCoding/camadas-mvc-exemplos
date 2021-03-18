@@ -7,7 +7,7 @@ class CalculatorController {
     return calculatorModel.result;
   }
 
-  void applyCommand(String command) {
+  void addToCalc(String command) {
     calculatorModel.applyCommand(command);
   }
 }

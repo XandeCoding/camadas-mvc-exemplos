@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="03fb6a69-3b5d-46c8-baa4-348d2674a7ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/calculatorController.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/calculatorController.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/calculatorModel.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/calculatorModel.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/calculatorView.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/calculatorView.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +23,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="dart.analysis.tool.window.force.activate" value="true" />
-    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="SvnConfiguration">
@@ -39,25 +42,44 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1358" height="217" key="GridCell.Tab.0.bottom" timestamp="1615847090900">
+    <state x="1920" y="173" width="424" height="506" key="FileChooserDialogImpl" timestamp="1616018470455">
       <screen x="1366" y="0" width="1600" height="900" />
     </state>
-    <state width="1358" height="217" key="GridCell.Tab.0.bottom/1366.0.1600.900/0.0.1366.768@1366.0.1600.900" timestamp="1615847090900" />
-    <state width="1358" height="217" key="GridCell.Tab.0.center" timestamp="1615847090900">
+    <state x="1920" y="173" width="424" height="506" key="FileChooserDialogImpl/1366.0.1600.900/0.0.1366.768@1366.0.1600.900" timestamp="1616018470455" />
+    <state width="1546" height="215" key="GridCell.Tab.0.bottom" timestamp="1616019883683">
       <screen x="1366" y="0" width="1600" height="900" />
     </state>
-    <state width="1358" height="217" key="GridCell.Tab.0.center/1366.0.1600.900/0.0.1366.768@1366.0.1600.900" timestamp="1615847090900" />
-    <state width="1358" height="217" key="GridCell.Tab.0.left" timestamp="1615847090900">
+    <state width="1546" height="215" key="GridCell.Tab.0.bottom/1366.0.1600.900/0.0.1366.768@1366.0.1600.900" timestamp="1616019883683" />
+    <state width="1546" height="215" key="GridCell.Tab.0.center" timestamp="1616019883683">
       <screen x="1366" y="0" width="1600" height="900" />
     </state>
-    <state width="1358" height="217" key="GridCell.Tab.0.left/1366.0.1600.900/0.0.1366.768@1366.0.1600.900" timestamp="1615847090900" />
-    <state width="1358" height="217" key="GridCell.Tab.0.right" timestamp="1615847090900">
+    <state width="1546" height="215" key="GridCell.Tab.0.center/1366.0.1600.900/0.0.1366.768@1366.0.1600.900" timestamp="1616019883683" />
+    <state width="1546" height="215" key="GridCell.Tab.0.left" timestamp="1616019883683">
       <screen x="1366" y="0" width="1600" height="900" />
     </state>
-    <state width="1358" height="217" key="GridCell.Tab.0.right/1366.0.1600.900/0.0.1366.768@1366.0.1600.900" timestamp="1615847090900" />
+    <state width="1546" height="215" key="GridCell.Tab.0.left/1366.0.1600.900/0.0.1366.768@1366.0.1600.900" timestamp="1616019883683" />
+    <state width="1546" height="215" key="GridCell.Tab.0.right" timestamp="1616019883683">
+      <screen x="1366" y="0" width="1600" height="900" />
+    </state>
+    <state width="1546" height="215" key="GridCell.Tab.0.right/1366.0.1600.900/0.0.1366.768@1366.0.1600.900" timestamp="1616019883683" />
+    <state x="1741" y="61" key="SettingsEditor" timestamp="1616019192975">
+      <screen x="1366" y="0" width="1600" height="900" />
+    </state>
+    <state x="1741" y="61" key="SettingsEditor/1366.0.1600.900/0.0.1366.768@1366.0.1600.900" timestamp="1616019192975" />
     <state x="1466" y="99" width="1400" height="660" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1615855991364">
       <screen x="1366" y="0" width="1600" height="900" />
     </state>
     <state x="1466" y="99" width="1400" height="660" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1366.0.1600.900/0.0.1366.768@1366.0.1600.900" timestamp="1615855991364" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/calculatorModel.dart</url>
+          <line>36</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,9 +1,5 @@
 class CalculatorModel {
-  static const operations = const ['%', '÷', '+', '-', 'x', '='];
-  String _operation;
-  bool _usedOperation = false;
-  final _buffer = [0.0, 0.0];
-  int _bufferIndex = 0;
+  static const operations = const ['%', '÷', '+', '-', 'x'];
 
   String result = '0';
 
@@ -12,20 +8,16 @@ class CalculatorModel {
   }
 
   void _clear() {
-    result = '0';
-    _buffer.setAll(0, [0.0, 0.0]);
-    _bufferIndex = 0;
-    _operation = null;
-    _usedOperation = false;
+    result = '';
   }
 
   void applyCommand(String command) {
-    if (command == 'AC') {
+    if (command == '=') {
+      _calculate();
+    } else if (command == 'AC') {
       _clear();
     } else if (command == 'DEL') {
       deleteEndDigit();
-    } else if (operations.contains(command)) {
-      _setOperation(command);
     } else {
       _addDigit(command);
     }
@@ -36,46 +28,50 @@ class CalculatorModel {
   }
 
   void _addDigit(String digit) {
-    if (_usedOperation) result = '0';
-
-    if (result.contains('.') && digit == '.') digit = '';
-    if (result == '0' && digit != '.') result = '';
-
-    result += digit;
-
-    _buffer[_bufferIndex] = double.tryParse(result);
-    _usedOperation = false;
-  }
-
-  void _setOperation(String operation) {
-    if (_usedOperation && operation == _operation) return;
-
-    if (_bufferIndex == 0) {
-      _bufferIndex = 1;
+    if (result == '0') {
+      result = digit;
     } else {
-      _buffer[0] = _calculate();
+      result += digit;
     }
-
-    if (operation != '=') _operation = operation;
-
-    result = _buffer[0].toString();
-    result = result.endsWith('.0') ? result.split('.')[0] : result;
-
-    _usedOperation = true;
   }
 
   double _calculate() {
-    switch (_operation) {
+    final digitsString = result.split(RegExp(r"(?<=[-+x÷%])|(?=[-+x÷%])"));
+
+    if (digitsString.length < 2) {
+      return double.tryParse(digitsString.elementAt(0));
+    }
+
+    var newResult;
+    var operation;
+
+    for (var element in digitsString) {
+      if (operations.contains(element)) {
+        operation = element;
+      } else if (newResult == null) {
+        newResult = double.parse(digitsString.elementAt(0));
+      } else if (operation != null) {
+        final numberB = double.parse(element);
+        newResult = resolveOperation(newResult, numberB, operation);
+      }
+    }
+
+    result = newResult.toString();
+    return newResult ?? '0';
+  }
+
+  double resolveOperation(numberA, numberB, operation) {
+    switch (operation) {
       case '%':
-        return _buffer[0] % _buffer[1];
+        return numberA % numberB;
       case '÷':
-        return _buffer[0] / _buffer[1];
+        return numberA / numberB;
       case 'x':
-        return _buffer[0] * _buffer[1];
+        return numberA * numberB;
       case '+':
-        return _buffer[0] + _buffer[1];
+        return numberA + numberB;
       case '-':
-        return _buffer[0] - _buffer[1];
+        return numberA - numberB;
       default:
         return 0.0;
     }
